@@ -1,8 +1,12 @@
 /* Core Typography Settings */
 .font-serif {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 300; /* Subtle light serif weight matching Alexander Vaughn */
-    letter-spacing: -0.025em;
+    letter-spacing: -0.015em;
+}
+
+/* Semibold Heading Override */
+h1.font-serif {
+    font-weight: 600;
 }
 
 body {
