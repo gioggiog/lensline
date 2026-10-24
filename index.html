@@ -249,34 +249,3 @@
 
     </div>
 </section>
-
-<!-- Advanced Lightbox Modal with Next / Previous Navigation -->
-<div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-between p-4 sm:p-8 backdrop-blur-lg">
-    <!-- Lightbox Header -->
-    <div class="w-full max-w-[1600px] flex items-center justify-between text-white z-10">
-        <div class="flex flex-col">
-            <span id="lightboxTitle" class="font-serif text-xl sm:text-2xl font-light"></span>
-            <span id="lightboxCounter" class="text-xs uppercase tracking-widest text-neutral-400 mt-1">1 / 1</span>
-        </div>
-        <button id="closeLightbox" aria-label="Close Lightbox" class="p-2 hover:bg-neutral-800 rounded-full transition-colors text-white text-2xl">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-    </div>
-
-    <!-- Lightbox Image Stage with Arrows -->
-    <div class="relative flex-1 w-full max-w-[1400px] flex items-center justify-center my-4">
-        <button id="lightboxPrev" aria-label="Previous Image" class="absolute left-2 sm:left-6 z-10 p-3 bg-black/50 hover:bg-black/80 border border-white/20 rounded-full text-white transition">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <img id="lightboxImg" src="" alt="Expanded View" class="max-h-[80vh] max-w-[85vw] object-contain shadow-2xl transition-all duration-300">
-
-        <button id="lightboxNext" aria-label="Next Image" class="absolute right-2 sm:right-6 z-10 p-3 bg-black/50 hover:bg-black/80 border border-white/20 rounded-full text-white transition">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
-
-    <div class="text-xs tracking-widest uppercase text-neutral-500">
-        <span>Use arrow keys or buttons to navigate album</span>
-    </div>
-</div>
