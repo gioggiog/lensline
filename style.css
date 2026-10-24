@@ -19,7 +19,7 @@ body {
     max-height: 32px;
 }
 
-/* Filter Button Minimalist Style (Adjusted for touch screens) */
+/* Filter Button Minimalist Style */
 .filter-btn {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
@@ -48,6 +48,29 @@ body {
     background-color: #ffffff;
     color: #000000;
     font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   Portfolio Grid: Black & White Thumbnails
+---------------------------------------------------- */
+#galleryGrid img,
+.gallery-item img {
+    filter: grayscale(100%) !important;
+    -webkit-filter: grayscale(100%) !important;
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Subtle color reveal on hover */
+#galleryGrid .gallery-item:hover img {
+    filter: grayscale(60%) !important;
+}
+
+/* ----------------------------------------------------
+   Lightbox Modal: Full Color Display
+---------------------------------------------------- */
+#lightboxImg {
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
 /* Light Theme Styling Overrides */
@@ -82,37 +105,4 @@ body.light-theme .filter-btn:hover {
 body.light-theme .filter-btn.active {
     background-color: #111111;
     color: #ffffff;
-}
-
-/* Make portfolio grid cover images black & white */
-#galleryGrid .gallery-item img {
-    filter: grayscale(100%);
-    transition: filter 0.5s ease, transform 0.5s ease;
-}
-
-/* Optional: Slight color reveal or hover effect on cover cards (if desired) */
-#galleryGrid .gallery-item:hover img {
-    filter: grayscale(80%);
-}
-/* Ensure photos in the lightbox modal display in full color */
-#lightboxImg {
-    filter: none !important;
-}
-
-/* Force grid portfolio images to be Black & White */
-#galleryGrid img,
-.gallery-item img {
-    filter: grayscale(100%) !important;
-    -webkit-filter: grayscale(100%) !important;
-    transition: filter 0.5s ease, transform 0.5s ease;
-}
-
-#galleryGrid .gallery-item:hover img {
-    filter: grayscale(60%) !important;
-}
-
-/* Ensure Lightbox modal images are full color */
-#lightboxImg {
-    filter: none !important;
-    -webkit-filter: none !important;
 }
