@@ -108,3 +108,18 @@ body.light-theme .filter-btn.active {
     background-color: #111111;
     color: #ffffff;
 }
+
+/* Custom Editorial Serif Styling */
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; /* Ultra refined & thin like Alexander's */
+    letter-spacing: -0.02em;
+}
+
+h1.font-serif {
+    font-weight: 300;
+}
+
+h2.font-serif {
+    font-weight: 400;
+}
