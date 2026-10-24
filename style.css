@@ -83,3 +83,18 @@ body.light-theme .filter-btn.active {
     background-color: #111111;
     color: #ffffff;
 }
+
+/* Make portfolio grid cover images black & white */
+#galleryGrid .gallery-item img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Optional: Slight color reveal or hover effect on cover cards (if desired) */
+#galleryGrid .gallery-item:hover img {
+    filter: grayscale(80%);
+}
+/* Ensure photos in the lightbox modal display in full color */
+#lightboxImg {
+    filter: none !important;
+}
