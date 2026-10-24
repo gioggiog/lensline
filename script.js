@@ -143,3 +143,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+const albumTriggers = document.querySelectorAll('.album-trigger');
+
+    albumTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            try {
+                const imagesAttr = trigger.getAttribute('data-images');
+                const titlesAttr = trigger.getAttribute('data-titles');
+                
+                if (imagesAttr && titlesAttr) {
+                    currentAlbumImages = JSON.parse(imagesAttr);
+                    currentAlbumTitles = JSON.parse(titlesAttr);
+                    currentIndex = 0;
+                    updateLightboxContent();
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                }
+            } catch (err) {
+                console.error("Error parsing album images JSON:", err);
+            }
+        });
+    });
