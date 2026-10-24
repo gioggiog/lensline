@@ -133,119 +133,122 @@
         </div>
     </div>
 
-    <!-- Gallery Grid (Displaying 1.jpg from each folder as cover cards) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="galleryGrid">
-        
-        <!-- Christening Card -->
-        <div class="gallery-item christening relative group overflow-hidden cursor-pointer rounded-sm album-trigger" 
-             data-album="christening"
-             data-images='[
-                 "selected works/Christening/1.jpg",
-                 "selected works/Christening/IMG_9226.jpg",
-                 "selected works/Christening/IMG_9222.jpg",
-                 "selected works/Christening/1 (4).jpg",
-                 "selected works/Christening/IMG_9076.jpg",
-                 "selected works/Christening/IMG_9068.jpg",
-                 "selected works/Christening/IMG_9066.jpg",
-                 "selected works/Christening/IMG_2402.jpg",
-                 "selected works/Christening/IMG_2393.jpg",
-                 "selected works/Christening/IMG_2389.jpg",
-                 "selected works/Christening/IMG_2380.jpg",
-                 "selected works/Christening/IMG_2354.jpg"
-             ]'
-             data-titles='[
-                 "Christening Celebration",
-                 "Family Group Photo",
-                 "Ceremony Moments",
-                 "Holy Water Ritual",
-                 "Baby Portrait",
-                 "Church Altar View",
-                 "Exterior Architecture",
-                 "Front Entrance",
-                 "Blessing Detail",
-                 "Reception Gathering",
-                 "Parent & Child",
-                 "Church Exterior"
-             ]'
-        >
-            <img src="selected works/Christening/1.jpg" alt="Christening Album" class="w-full h-[350px] sm:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span class="text-xs uppercase tracking-widest text-gray-300">Christening</span>
-                <h3 class="font-serif text-xl font-bold">Christening Album (12 Photos)</h3>
-            </div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="galleryGrid">
+    
+    <!-- Christening Card -->
+    <div class="gallery-item christening relative group overflow-hidden cursor-pointer rounded-sm album-trigger" 
+         data-album="christening"
+         data-images='[
+             "selected works/Christening/1.jpg",
+             "selected works/Christening/IMG_9226.jpg",
+             "selected works/Christening/IMG_9222.jpg",
+             "selected works/Christening/1 (4).jpg",
+             "selected works/Christening/IMG_9076.jpg",
+             "selected works/Christening/IMG_9068.jpg",
+             "selected works/Christening/IMG_9066.jpg",
+             "selected works/Christening/IMG_2402.jpg",
+             "selected works/Christening/IMG_2393.jpg",
+             "selected works/Christening/IMG_2389.jpg",
+             "selected works/Christening/IMG_2380.jpg",
+             "selected works/Christening/IMG_2354.jpg"
+         ]'
+         data-titles='[
+             "Christening Celebration",
+             "Family Group Photo",
+             "Ceremony Moments",
+             "Holy Water Ritual",
+             "Baby Portrait",
+             "Church Altar View",
+             "Exterior Architecture",
+             "Front Entrance",
+             "Blessing Detail",
+             "Reception Gathering",
+             "Parent & Child",
+             "Church Exterior"
+         ]'
+    >
+        <!-- Added 'grayscale' class here -->
+        <img src="selected works/Christening/1.jpg" alt="Christening Album" class="w-full h-[350px] sm:h-[450px] object-cover grayscale transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs uppercase tracking-widest text-gray-300">Christening</span>
+            <h3 class="font-serif text-xl font-bold">Christening Album (12 Photos)</h3>
         </div>
-
-        <!-- Events Card -->
-        <div class="gallery-item events relative group overflow-hidden cursor-pointer rounded-sm album-trigger" 
-             data-album="events"
-             data-images='[
-                 "selected works/Events/1.jpg",
-                 "selected works/Events/2.jpg",
-                 "selected works/Events/IMG_9132.jpg",
-                 "selected works/Events/IMG_9261.jpg"
-             ]'
-             data-titles='[
-                 "Live Celebration Group",
-                 "Stage Presentation",
-                 "Award Trophies",
-                 "Keynote Speaker"
-             ]'
-        >
-            <img src="selected works/Events/1.jpg" alt="Events Album" class="w-full h-[350px] sm:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span class="text-xs uppercase tracking-widest text-gray-300">Events</span>
-                <h3 class="font-serif text-xl font-bold">Events Album (4 Photos)</h3>
-            </div>
-        </div>
-
-        <!-- Portraits Card -->
-        <div class="gallery-item portraits relative group overflow-hidden cursor-pointer rounded-sm album-trigger" 
-             data-album="portraits"
-             data-images='[
-                 "selected works/Portraits/1.jpg",
-                 "selected works/Portraits/15.jpg",
-                 "selected works/Portraits/21.JPG",
-                 "selected works/Portraits/23.JPG",
-                 "selected works/Portraits/24.JPG",
-                 "selected works/Portraits/25.JPG",
-                 "selected works/Portraits/26.JPG",
-                 "selected works/Portraits/27.JPG",
-                 "selected works/Portraits/IMG_3305.jpg",
-                 "selected works/Portraits/IMG_3313.jpg",
-                 "selected works/Portraits/IMG_3320.jpg",
-                 "selected works/Portraits/IMG_3326.jpg",
-                 "selected works/Portraits/IMG_3333.jpg",
-                 "selected works/Portraits/IMG_4345.jpg",
-                 "selected works/Portraits/IMG_8678.png",
-                 "selected works/Portraits/IMG_8684.png",
-                 "selected works/Portraits/IMG_8712.png"
-             ]'
-             data-titles='[
-                 "Studio Portrait 1",
-                 "Reading By Lamp",
-                 "Blue Ambient Portrait",
-                 "Close-up Expression",
-                 "Rose Portrait",
-                 "Sunlit Session",
-                 "Warm Golden Light",
-                 "Reflective Pose",
-                 "Casual Natural Light",
-                 "Outdoor Full Body",
-                 "Park Walkway",
-                 "Urban Step Pose",
-                 "Full Length Staircase",
-                 "Street Corner",
-                 "Studio White Tee 1",
-                 "Studio White Tee 2",
-                 "Group Urban Pose"
-             ]'
-        >
-            <img src="selected works/Portraits/1.jpg" alt="Portraits Album" class="w-full h-[350px] sm:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span class="text-xs uppercase tracking-widest text-gray-300">Portraits</span>
-                <h3 class="font-serif text-xl font-bold">Portraits Album (17 Photos)</h3>
-            </div>
-        </div>
-
     </div>
+
+    <!-- Events Card -->
+    <div class="gallery-item events relative group overflow-hidden cursor-pointer rounded-sm album-trigger" 
+         data-album="events"
+         data-images='[
+             "selected works/Events/1.jpg",
+             "selected works/Events/2.jpg",
+             "selected works/Events/IMG_9132.jpg",
+             "selected works/Events/IMG_9261.jpg"
+         ]'
+         data-titles='[
+             "Live Celebration Group",
+             "Stage Presentation",
+             "Award Trophies",
+             "Keynote Speaker"
+         ]'
+    >
+        <!-- Added 'grayscale' class here -->
+        <img src="selected works/Events/1.jpg" alt="Events Album" class="w-full h-[350px] sm:h-[450px] object-cover grayscale transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs uppercase tracking-widest text-gray-300">Events</span>
+            <h3 class="font-serif text-xl font-bold">Events Album (4 Photos)</h3>
+        </div>
+    </div>
+
+    <!-- Portraits Card -->
+    <div class="gallery-item portraits relative group overflow-hidden cursor-pointer rounded-sm album-trigger" 
+         data-album="portraits"
+         data-images='[
+             "selected works/Portraits/1.jpg",
+             "selected works/Portraits/15.jpg",
+             "selected works/Portraits/21.JPG",
+             "selected works/Portraits/23.JPG",
+             "selected works/Portraits/24.JPG",
+             "selected works/Portraits/25.JPG",
+             "selected works/Portraits/26.JPG",
+             "selected works/Portraits/27.JPG",
+             "selected works/Portraits/IMG_3305.jpg",
+             "selected works/Portraits/IMG_3313.jpg",
+             "selected works/Portraits/IMG_3320.jpg",
+             "selected works/Portraits/IMG_3326.jpg",
+             "selected works/Portraits/IMG_3333.jpg",
+             "selected works/Portraits/IMG_4345.jpg",
+             "selected works/Portraits/IMG_8678.png",
+             "selected works/Portraits/IMG_8684.png",
+             "selected works/Portraits/IMG_8712.png"
+         ]'
+         data-titles='[
+             "Studio Portrait 1",
+             "Reading By Lamp",
+             "Blue Ambient Portrait",
+             "Close-up Expression",
+             "Rose Portrait",
+             "Sunlit Session",
+             "Warm Golden Light",
+             "Reflective Pose",
+             "Casual Natural Light",
+             "Outdoor Full Body",
+             "Park Walkway",
+             "Urban Step Pose",
+             "Full Length Staircase",
+             "Street Corner",
+             "Studio White Tee 1",
+             "Studio White Tee 2",
+             "Group Urban Pose"
+         ]'
+    >
+        <!-- Added 'grayscale' class here -->
+        <img src="selected works/Portraits/1.jpg" alt="Portraits Album" class="w-full h-[350px] sm:h-[450px] object-cover grayscale transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-xs uppercase tracking-widest text-gray-300">Portraits</span>
+            <h3 class="font-serif text-xl font-bold">Portraits Album (17 Photos)</h3>
+        </div>
+    </div>
+
+</div>
 </section>
