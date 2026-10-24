@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close mobile drawer automatically when tapping any menu link
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Portfolio Category Filter
+    // 3. Portfolio Category Filter Buttons
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -68,19 +67,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Lightbox Modal Functionality
+    // 4. Interactive Lightbox Album Viewer
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxCounter = document.getElementById('lightboxCounter');
     const closeLightbox = document.getElementById('closeLightbox');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgSrc = item.querySelector('img').src;
-            lightboxImg.src = imgSrc;
+    let currentAlbumImages = [];
+    let currentAlbumTitles = [];
+    let currentIndex = 0;
+
+    const albumTriggers = document.querySelectorAll('.album-trigger');
+
+    albumTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            currentAlbumImages = JSON.parse(trigger.getAttribute('data-images'));
+            currentAlbumTitles = JSON.parse(trigger.getAttribute('data-titles'));
+            currentIndex = 0;
+            updateLightboxContent();
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
         });
     });
+
+    function updateLightboxContent() {
+        lightboxImg.src = currentAlbumImages[currentIndex];
+        lightboxTitle.textContent = currentAlbumTitles[currentIndex];
+        lightboxCounter.textContent = `${currentIndex + 1} / ${currentAlbumImages.length}`;
+    }
 
     if (closeLightbox) {
         closeLightbox.addEventListener('click', () => {
@@ -89,6 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
+            updateLightboxContent();
+        });
+    }
+
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % currentAlbumImages.length;
+            updateLightboxContent();
+        });
+    }
+
+    // Close lightbox on clicking outside the image
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
