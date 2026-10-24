@@ -1,0 +1,63 @@
+/* Base Styles & Custom Utilities */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Filter Button Styling */
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+/* Light Theme Overrides when active */
+body.light-theme {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
+body.light-theme nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme nav svg {
+    fill: #111111 !important;
+}
+
+body.light-theme nav a,
+body.light-theme #themeToggle {
+    color: #111111 !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+body.light-theme .filter-btn {
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #111111;
+}
+
+body.light-theme .filter-btn:hover,
+body.light-theme .filter-btn.active {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}

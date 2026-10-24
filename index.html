@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LensLine Photography | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white antialiased transition-colors duration-300">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/80 border-b border-white/10 px-6 py-4 transition-colors duration-300">
+        <div class="max-w-[1800px] mx-auto flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <svg class="h-10 w-auto fill-current text-white transition-transform duration-300 group-hover:scale-105" viewBox="0 0 320 280">
+                    <path d="M 40,240 C 10,240 0,210 20,160 L 80,40 C 95,10 120,5 130,25 C 135,35 130,50 115,85 L 65,190 C 55,210 50,220 70,220 L 140,220 C 160,220 155,240 130,240 Z" />
+                    <path d="M 100,105 C 100,85 115,75 130,75 C 145,75 155,85 155,100 C 155,120 130,135 110,140 C 120,130 135,120 135,105 Z" />
+                    <path d="M 140,110 C 150,90 165,85 175,95 C 185,105 175,125 160,135 C 180,120 200,100 220,100 C 235,100 245,110 240,125 C 230,150 205,170 180,170 Z" />
+                    <path d="M 100,185 C 100,170 110,160 125,160 C 140,160 145,170 140,185 C 130,205 110,210 100,185 Z" />
+                    <path d="M 135,185 C 135,170 145,160 160,160 C 175,160 180,170 175,185 C 165,205 145,210 135,185 Z" />
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-wider leading-none">LensLine</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gray-400 uppercase">Photography</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm tracking-widest uppercase">
+                <a href="#gallery" class="hover:text-gray-400 transition-colors">Portfolio</a>
+                <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
+                <a href="#services" class="hover:text-gray-400 transition-colors">Services</a>
+                <a href="#contact" class="hover:text-gray-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="p-2.5 rounded-full border border-white/20 hover:bg-white/10 transition-colors" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun text-sm"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-block px-5 py-2.5 bg-white text-black font-semibold text-xs tracking-widest uppercase hover:bg-gray-200 transition-colors">
+                    Book Session
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000" alt="LensLine Hero" class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl px-6">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Capturing Unscripted Moments & Timeless Stories
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 font-light max-w-2xl mx-auto mb-8">
+                Professional event, portrait, and lifestyle photography crafted with clean aesthetics and authentic detail.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#gallery" class="px-8 py-4 bg-white text-black font-semibold text-xs tracking-widest uppercase hover:bg-gray-200 transition-all">
+                    Explore Gallery
+                </a>
+                <a href="#contact" class="px-8 py-4 border border-white text-white font-semibold text-xs tracking-widest uppercase hover:bg-white/10 transition-all">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="gallery" class="py-24 px-6 max-w-[1800px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-8">
+            <div>
+                <h2 class="font-serif text-4xl font-bold mb-2">Selected Works</h2>
+                <p class="text-gray-400 font-light">Explore recent photography projects across various categories</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filterContainer">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="weddings">Weddings</button>
+                <button class="filter-btn" data-filter="corporate">Corporate</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
+            <!-- Items injected dynamically or defined statically -->
+            <div class="gallery-item events relative group overflow-hidden cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200" alt="Event Coverage" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-300">Events</span>
+                    <h3 class="font-serif text-xl font-bold">Live Celebration</h3>
+                </div>
+            </div>
+            <div class="gallery-item portraits relative group overflow-hidden cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200" alt="Portrait Session" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-300">Portraits</span>
+                    <h3 class="font-serif text-xl font-bold">Natural Light Studio</h3>
+                </div>
+            </div>
+            <div class="gallery-item weddings relative group overflow-hidden cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200" alt="Wedding Moments" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs uppercase tracking-widest text-gray-300">Weddings</span>
+                    <h3 class="font-serif text-xl font-bold">Civil Ceremony</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4">
+        <button id="closeLightbox" class="absolute top-6 right-6 text-white text-3xl hover:text-gray-400">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightboxImg" class="max-h-[90vh] max-w-[90vw] object-contain" src="" alt="Enlarged view">
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
