@@ -1,15 +1,12 @@
-/* Base Styles & Custom Utilities */
-@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+/* Custom Utility & Light Theme Overrides */
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+/* Restrict SVG dimensions so it never overflows */
+svg {
+    max-height: 40px;
+    width: auto;
 }
 
-h1, h2, h3, .font-serif {
-    font-family: 'Playfair Display', serif;
-}
-
-/* Filter Button Styling */
+/* Filter Button Base Styles */
 .filter-btn {
     padding: 0.5rem 1.25rem;
     font-size: 0.75rem;
@@ -29,14 +26,14 @@ h1, h2, h3, .font-serif {
     border-color: #ffffff;
 }
 
-/* Light Theme Overrides when active */
+/* Light Theme Styling */
 body.light-theme {
     background-color: #ffffff !important;
     color: #111111 !important;
 }
 
 body.light-theme nav {
-    background-color: rgba(255, 255, 255, 0.85) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
     border-bottom-color: rgba(0, 0, 0, 0.1) !important;
 }
 
