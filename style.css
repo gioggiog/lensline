@@ -58,3 +58,15 @@ body.light-theme .filter-btn.active {
     color: #ffffff;
     border-color: #111111;
 }
+
+/* Logo Styling */
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-height: 40px;
+}
+
+/* Invert white PNG logo color when Light Theme is active */
+body.light-theme .logo-img {
+    filter: invert(1);
+}
