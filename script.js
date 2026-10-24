@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
