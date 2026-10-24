@@ -43,9 +43,9 @@
             >
         </a>
 
-        <!-- Desktop Nav Links -->
+        <!-- Desktop Nav Links (Changed Portfolio to Work) -->
         <div class="hidden md:flex items-center gap-8 font-medium text-xs tracking-widest uppercase">
-            <a href="#gallery" class="hover:text-gray-400 transition-colors">Portfolio</a>
+            <a href="#gallery" class="hover:text-gray-400 transition-colors">Work</a>
             <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
             <a href="#services" class="hover:text-gray-400 transition-colors">Services</a>
             <a href="#contact" class="hover:text-gray-400 transition-colors">Contact</a>
@@ -88,48 +88,53 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="gallery" class="py-24 px-6 max-w-[1800px] mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-8 gap-4">
-            <div>
-                <h2 class="font-serif text-4xl font-bold mb-2">Selected Works</h2>
-                <p class="text-gray-400 font-light">Explore recent photography projects across various categories</p>
+<section id="gallery" class="py-24 px-6 max-w-[1800px] mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 border-b border-white/10 pb-8 gap-6">
+        
+        <!-- Updated Title: Portfolio / Selected Works -->
+        <div>
+            <div class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-1">
+                <span>Portfolio</span>
+                <span>/</span>
             </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap gap-2" id="filterContainer">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="portraits">Portraits</button>
-                <button class="filter-btn" data-filter="weddings">Weddings</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-            </div>
+            <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-tight">Selected Works</h2>
         </div>
 
-        <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
-            <div class="gallery-item events relative group overflow-hidden cursor-pointer rounded-sm">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200" alt="Event Coverage" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs uppercase tracking-widest text-gray-300">Events</span>
-                    <h3 class="font-serif text-xl font-bold">Live Celebration</h3>
-                </div>
-            </div>
-            <div class="gallery-item portraits relative group overflow-hidden cursor-pointer rounded-sm">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200" alt="Portrait Session" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs uppercase tracking-widest text-gray-300">Portraits</span>
-                    <h3 class="font-serif text-xl font-bold">Natural Light Studio</h3>
-                </div>
-            </div>
-            <div class="gallery-item weddings relative group overflow-hidden cursor-pointer rounded-sm">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200" alt="Wedding Moments" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs uppercase tracking-widest text-gray-300">Weddings</span>
-                    <h3 class="font-serif text-xl font-bold">Civil Ceremony</h3>
-                </div>
+        <!-- Filter Buttons (Matching your screenshot style) -->
+        <div class="flex flex-wrap items-center gap-3 md:gap-6" id="filterContainer">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="portraits">Portraits</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="corporate">Corporate</button>
+            <button class="filter-btn" data-filter="weddings">Weddings</button>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
+        <div class="gallery-item events relative group overflow-hidden cursor-pointer rounded-sm">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200" alt="Event Coverage" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span class="text-xs uppercase tracking-widest text-gray-300">Events</span>
+                <h3 class="font-serif text-xl font-bold">Live Celebration</h3>
             </div>
         </div>
-    </section>
+        <div class="gallery-item portraits relative group overflow-hidden cursor-pointer rounded-sm">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200" alt="Portrait Session" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span class="text-xs uppercase tracking-widest text-gray-300">Portraits</span>
+                <h3 class="font-serif text-xl font-bold">Natural Light Studio</h3>
+            </div>
+        </div>
+        <div class="gallery-item weddings relative group overflow-hidden cursor-pointer rounded-sm">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200" alt="Wedding Moments" class="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span class="text-xs uppercase tracking-widest text-gray-300">Weddings</span>
+                <h3 class="font-serif text-xl font-bold">Civil Ceremony</h3>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4">
