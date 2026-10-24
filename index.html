@@ -3,100 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LensLine | Portfolio</title>
+    <title>LensLine Photography</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                fontFamily: {
-                    sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    serif: ['Cormorant Garamond', 'serif'],
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
                 }
             }
         }
-    }
-</script>
-    <!-- Google Fonts (Cormorant Garamond for elegant light serif titles) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Styles -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white antialiased transition-colors duration-300">
+<body class="bg-black text-white antialiased selection:bg-white selection:text-black">
 
-    <!-- Navigation Bar -->
-<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/80 border-b border-white/10 px-6 py-4 transition-colors duration-300">
-    <div class="max-w-[1800px] mx-auto flex justify-between items-center">
-        
-        <!-- Brand Logo Image -->
-        <a href="#" class="flex items-center gap-3 group">
-            <img 
-                src="lensline png white.png" 
-                alt="LensLine Photography Logo" 
-                class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 logo-img"
-            >
-        </a>
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 px-8 lg:px-24 py-6 transition-colors duration-300">
+        <div class="w-full flex justify-between items-center">
+            
+            <!-- Left: Brand Logo -->
+            <a href="#" class="flex items-center">
+                <img 
+                    src="lensline png white.png" 
+                    alt="LensLine Logo" 
+                    class="h-8 w-auto object-contain logo-img"
+                >
+            </a>
 
-        <!-- Desktop Nav Links (Changed Portfolio to Work) -->
-        <div class="hidden md:flex items-center gap-8 font-medium text-xs tracking-widest uppercase">
-            <a href="#gallery" class="hover:text-gray-400 transition-colors">Work</a>
-            <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
-            <a href="#services" class="hover:text-gray-400 transition-colors">Services</a>
-            <a href="#contact" class="hover:text-gray-400 transition-colors">Contact</a>
+            <!-- Right Controls & Links -->
+            <div class="flex items-center gap-12">
+                <div class="hidden md:flex items-center gap-10 font-medium text-[11px] tracking-[0.25em] text-gray-300 uppercase">
+                    <a href="#gallery" class="hover:text-white transition-colors">Work</a>
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#about" class="hover:text-white transition-colors">About</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <button id="themeToggle" class="text-gray-400 hover:text-white transition-colors p-1" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun text-sm"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+    <section class="relative min-h-screen w-full flex items-center justify-start pt-28 pb-16 px-8 lg:px-24 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000" alt="LensLine Hero Background" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60"></div>
         </div>
 
-        <!-- Controls -->
-        <div class="flex items-center gap-4">
-            <button id="themeToggle" class="p-2.5 rounded-full border border-white/20 hover:bg-white/10 transition-colors" aria-label="Toggle Theme">
-                <i class="fa-solid fa-sun text-sm"></i>
-            </button>
-            <a href="#contact" class="hidden sm:inline-block px-5 py-2.5 bg-white text-black font-semibold text-xs tracking-widest uppercase hover:bg-gray-200 transition-colors">
-                Book Session
-            </a>
+        <!-- Hero Content Box -->
+        <div class="relative z-10 max-w-3xl text-left">
+            <!-- Small Uppercase Tagline -->
+            <p class="text-[10px] font-semibold tracking-[0.35em] text-gray-400 uppercase mb-8">
+                Fine Art & Visual Storytelling
+            </p>
+
+            <!-- Headline (Thin font-weight 300, 80px size on wide screens, tight line-height) -->
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-[82px] font-light leading-[0.98] tracking-tight text-white mb-8">
+                Capturing unscripted moments & timeless stories.
+            </h1>
+
+            <!-- Subtitle Paragraph -->
+            <p class="text-xs md:text-sm text-gray-400 font-light leading-relaxed max-w-lg mb-10">
+                Visual narrator specializing in event coverage, portraits, and authentic documentary moments.
+            </p>
+
+            <!-- Call to Action Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="#gallery" class="px-7 py-3.5 bg-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase hover:bg-gray-200 transition-all text-center">
+                    Explore Work
+                </a>
+                <a href="#contact" class="px-7 py-3.5 border border-white/30 text-white font-medium text-[11px] tracking-[0.2em] uppercase hover:bg-white/10 transition-all text-center">
+                    Get In Touch
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
+    </section>
 
-<!-- Hero Section (Full Screen & Edge-to-Edge Wide Layout) -->
-<section class="relative min-h-screen w-full flex items-center justify-start pt-20 overflow-hidden px-8 lg:px-20">
-    <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000" alt="LensLine Hero" class="w-full h-full object-cover opacity-45">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-    </div>
-
-    <div class="relative z-10 text-left max-w-4xl py-20">
-        <!-- Small Sub-Tagline -->
-        <p class="text-xs font-semibold tracking-[0.3em] uppercase text-gray-300 mb-6">
-            Fine Art & Visual Storytelling
-        </p>
-
-        <!-- Main Title (Heavier font weight: regular/400 instead of thin 300) -->
-        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-8 leading-[1.05] text-white">
-            Capturing unscripted moments & timeless stories.
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="text-base md:text-lg text-gray-300 font-light max-w-2xl mb-10 leading-relaxed">
-            Visual narrator specializing in event coverage, portraits, and authentic documentary moments.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#gallery" class="px-8 py-4 bg-white text-black font-semibold text-xs tracking-[0.2em] uppercase hover:bg-gray-200 transition-all text-center">
-                Explore Work
-            </a>
-            <a href="#contact" class="px-8 py-4 border border-white/50 text-white font-semibold text-xs tracking-[0.2em] uppercase hover:bg-white/10 transition-all text-center">
-                Get In Touch
-            </a>
-        </div>
-    </div>
-</section>
+</body>
+</html>
     
     <!-- Portfolio Section -->
 <section id="gallery" class="py-24 px-6 max-w-[1800px] mx-auto">
