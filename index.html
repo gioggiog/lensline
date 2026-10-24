@@ -63,40 +63,41 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-start pt-20 overflow-hidden px-8 md:px-16 max-w-[1800px] mx-auto">
+<!-- Hero Section (Full Screen & Edge-to-Edge Wide Layout) -->
+<section class="relative min-h-screen w-full flex items-center justify-start pt-20 overflow-hidden px-8 lg:px-20">
     <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000" alt="LensLine Hero" class="w-full h-full object-cover opacity-40">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000" alt="LensLine Hero" class="w-full h-full object-cover opacity-45">
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
     </div>
 
-    <div class="relative z-10 text-left max-w-3xl py-20">
+    <div class="relative z-10 text-left max-w-4xl py-20">
         <!-- Small Sub-Tagline -->
-        <p class="text-[11px] font-medium tracking-[0.3em] uppercase text-gray-400 mb-6">
+        <p class="text-xs font-semibold tracking-[0.3em] uppercase text-gray-300 mb-6">
             Fine Art & Visual Storytelling
         </p>
 
-        <!-- Main Title (Lighter font weight & sentence casing) -->
-        <h1 class="font-serif text-5xl md:text-7xl font-light tracking-tight mb-8 leading-[1.1] text-white">
+        <!-- Main Title (Heavier font weight: regular/400 instead of thin 300) -->
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-8 leading-[1.05] text-white">
             Capturing unscripted moments & timeless stories.
         </h1>
 
         <!-- Subtitle -->
-        <p class="text-sm md:text-base text-gray-400 font-light max-w-xl mb-10 leading-relaxed">
+        <p class="text-base md:text-lg text-gray-300 font-light max-w-2xl mb-10 leading-relaxed">
             Visual narrator specializing in event coverage, portraits, and authentic documentary moments.
         </p>
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#gallery" class="px-8 py-3.5 bg-white text-black font-medium text-xs tracking-[0.2em] uppercase hover:bg-gray-200 transition-all text-center">
+            <a href="#gallery" class="px-8 py-4 bg-white text-black font-semibold text-xs tracking-[0.2em] uppercase hover:bg-gray-200 transition-all text-center">
                 Explore Work
             </a>
-            <a href="#contact" class="px-8 py-3.5 border border-white/40 text-white font-medium text-xs tracking-[0.2em] uppercase hover:bg-white/10 transition-all text-center">
+            <a href="#contact" class="px-8 py-4 border border-white/50 text-white font-semibold text-xs tracking-[0.2em] uppercase hover:bg-white/10 transition-all text-center">
                 Get In Touch
             </a>
         </div>
     </div>
 </section>
+    
     <!-- Portfolio Section -->
 <section id="gallery" class="py-24 px-6 max-w-[1800px] mx-auto">
     <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 border-b border-white/10 pb-8 gap-6">
