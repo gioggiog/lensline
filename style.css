@@ -1,4 +1,13 @@
-/* Custom Utility & Light Theme Overrides */
+/* Custom Utility & Layout Constraints */
+
+/* Ensure ultra-wide layout container spans up to 1800px */
+.max-w-\[1800px\], 
+#gallery {
+    max-width: 1800px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* Restrict SVG dimensions so it never overflows */
 svg {
@@ -6,27 +15,53 @@ svg {
     width: auto;
 }
 
-/* Filter Button Base Styles */
-.filter-btn {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: transparent;
-    color: #ffffff;
-    transition: all 0.3s ease;
-    cursor: pointer;
+/* Logo Image Styling */
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-height: 40px;
 }
 
-.filter-btn:hover,
+/* Editorial Font Styling (Balanced weight) */
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+h1.font-serif {
+    font-weight: 400;
+}
+
+h2.font-serif {
+    font-weight: 500;
+}
+
+/* Filter Buttons (Minimalist style with white active box) */
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: none;
+    background-color: transparent;
+    color: #9ca3af; /* Muted gray for inactive items */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter-btn:hover {
+    color: #ffffff;
+}
+
 .filter-btn.active {
     background-color: #ffffff;
     color: #000000;
-    border-color: #ffffff;
+    font-weight: 600;
 }
 
-/* Light Theme Styling */
+/* Light Theme Styling Overrides */
 body.light-theme {
     background-color: #ffffff !important;
     color: #111111 !important;
@@ -47,55 +82,10 @@ body.light-theme #themeToggle {
     border-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-body.light-theme .filter-btn {
-    border-color: rgba(0, 0, 0, 0.2);
-    color: #111111;
-}
-
-body.light-theme .filter-btn:hover,
-body.light-theme .filter-btn.active {
-    background-color: #111111;
-    color: #ffffff;
-    border-color: #111111;
-}
-
-/* Logo Styling */
-.logo-img {
-    height: 40px;
-    width: auto;
-    max-height: 40px;
-}
-
 body.light-theme .logo-img {
     filter: invert(1);
 }
 
-/* Filter Button Minimalist Style (Matching your reference image) */
-.filter-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    border: none;
-    background-color: transparent;
-    color: #9ca3af; /* muted gray for inactive */
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.filter-btn:hover {
-    color: #ffffff;
-}
-
-/* Active Filter Button (White box with dark text, matching your screenshot) */
-.filter-btn.active {
-    background-color: #ffffff;
-    color: #000000;
-    font-weight: 600;
-}
-
-/* Light Theme Adjustments for Filter Buttons */
 body.light-theme .filter-btn {
     color: #6b7280;
 }
@@ -107,19 +97,4 @@ body.light-theme .filter-btn:hover {
 body.light-theme .filter-btn.active {
     background-color: #111111;
     color: #ffffff;
-}
-
-/* Custom Editorial Serif Styling */
-.font-serif {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300; /* Ultra refined & thin like Alexander's */
-    letter-spacing: -0.02em;
-}
-
-h1.font-serif {
-    font-weight: 300;
-}
-
-h2.font-serif {
-    font-weight: 400;
 }
