@@ -1,0 +1,203 @@
+/* Core Typography Settings */
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.015em;
+}
+
+h1.font-serif {
+    font-weight: 600;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Smooth scrolling when clicking nav links (offset so the fixed nav doesn't cover titles) */
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* Nav Logo Image Sizing */
+.logo-img {
+    height: 32px;
+    width: auto;
+    max-height: 32px;
+}
+
+/* Filter Button Minimalist Style */
+.filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: none;
+    background-color: transparent;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@media (min-width: 640px) {
+    .filter-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+.filter-btn:hover {
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   Portfolio Grid: Black & White Thumbnails
+---------------------------------------------------- */
+#galleryGrid img,
+.gallery-item img {
+    filter: grayscale(100%) !important;
+    -webkit-filter: grayscale(100%) !important;
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Subtle color reveal on hover */
+#galleryGrid .gallery-item:hover img {
+    filter: grayscale(60%) !important;
+}
+
+/* ----------------------------------------------------
+   Scroll Reveal: elements fade up as they enter the screen
+   Usage: add class="reveal" (optional style="--d:.15s" for stagger)
+---------------------------------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--d, 0s);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------------------------------------------
+   Hero Intro: plays once when the page loads
+---------------------------------------------------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1); }
+}
+
+.hero-item {
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--d, 0s);
+}
+
+.hero-bg {
+    animation: heroZoom 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ----------------------------------------------------
+   Gallery card fade when switching filters
+---------------------------------------------------- */
+.gallery-item {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.gallery-item.filter-hide {
+    opacity: 0 !important;
+    transform: scale(0.96) !important;
+}
+
+/* ----------------------------------------------------
+   Lightbox Modal: smooth fade in/out, Full Color Display
+---------------------------------------------------- */
+.lightbox {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.lightbox.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+#lightboxImg {
+    filter: none !important;
+    -webkit-filter: none !important;
+    will-change: opacity, transform;
+}
+
+/* Respect people who turn off animations in their device settings */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .reveal,
+    .hero-item,
+    .hero-bg {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Light Theme Styling Overrides */
+body.light-theme {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
+body.light-theme nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme nav a,
+body.light-theme #themeToggle,
+body.light-theme #mobileMenuBtn {
+    color: #111111 !important;
+}
+
+body.light-theme .logo-img {
+    filter: invert(1);
+}
+
+body.light-theme .filter-btn {
+    color: #6b7280;
+}
+
+body.light-theme .filter-btn:hover {
+    color: #111111;
+}
+
+body.light-theme .filter-btn.active {
+    background-color: #111111;
+    color: #ffffff;
+}
