@@ -80,89 +80,52 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentAlbumTitles = [];
     let currentIndex = 0;
 
-    const albumTriggers = document.querySelectorAll('.album-trigger');
-
-    albumTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            try {
-                currentAlbumImages = JSON.parse(trigger.getAttribute('data-images'));
-                currentAlbumTitles = JSON.parse(trigger.getAttribute('data-titles'));
-                currentIndex = 0;
-                updateLightboxContent();
-                lightbox.classList.remove('hidden');
-                lightbox.classList.add('flex');
-            } catch (err) {
-                console.error("Error parsing album images JSON:", err);
-            }
-        });
-    });
+    // Called by the onclick on each gallery card
+    window.openAlbum = function (images, titles) {
+        currentAlbumImages = images;
+        currentAlbumTitles = titles || [];
+        currentIndex = 0;
+        updateLightboxContent();
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    };
 
     function updateLightboxContent() {
-        if (currentAlbumImages.length > 0) {
-            lightboxImg.src = currentAlbumImages[currentIndex];
-            lightboxTitle.textContent = currentAlbumTitles[currentIndex] || '';
-            lightboxCounter.textContent = `${currentIndex + 1} / ${currentAlbumImages.length}`;
-        }
+        if (currentAlbumImages.length === 0) return;
+        lightboxImg.src = currentAlbumImages[currentIndex];
+        lightboxTitle.textContent = currentAlbumTitles[currentIndex] || '';
+        lightboxCounter.textContent = `${currentIndex + 1} / ${currentAlbumImages.length}`;
     }
 
-    if (closeLightbox) {
-        closeLightbox.addEventListener('click', () => {
-            lightbox.classList.add('hidden');
-            lightbox.classList.remove('flex');
-        });
+    function closeLb() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
     }
 
-    if (lightboxPrev) {
-        lightboxPrev.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (currentAlbumImages.length > 0) {
-                currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
-                updateLightboxContent();
-            }
-        });
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
+        updateLightboxContent();
     }
 
-    if (lightboxNext) {
-        lightboxNext.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (currentAlbumImages.length > 0) {
-                currentIndex = (currentIndex + 1) % currentAlbumImages.length;
-                updateLightboxContent();
-            }
-        });
+    function showNext() {
+        currentIndex = (currentIndex + 1) % currentAlbumImages.length;
+        updateLightboxContent();
     }
 
-    // Close lightbox on clicking outside the image container
-    if (lightbox) {
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.add('hidden');
-                lightbox.classList.remove('flex');
-            }
-        });
-    }
-});
+    closeLightbox.addEventListener('click', closeLb);
+    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-const albumTriggers = document.querySelectorAll('.album-trigger');
+    // Click the dark background to close
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLb(); });
 
-    albumTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            try {
-                const imagesAttr = trigger.getAttribute('data-images');
-                const titlesAttr = trigger.getAttribute('data-titles');
-                
-                if (imagesAttr && titlesAttr) {
-                    currentAlbumImages = JSON.parse(imagesAttr);
-                    currentAlbumTitles = JSON.parse(titlesAttr);
-                    currentIndex = 0;
-                    updateLightboxContent();
-                    lightbox.classList.remove('hidden');
-                    lightbox.classList.add('flex');
-                }
-            } catch (err) {
-                console.error("Error parsing album images JSON:", err);
-            }
-        });
+    // Keyboard: Esc, left arrow, right arrow
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
     });
+});
