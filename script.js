@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.innerHTML = `
                 <img src="${sources[0]}" alt="${album.label} album" loading="lazy"
                      class="w-full h-[350px] sm:h-[450px] object-cover grayscale transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent flex flex-col justify-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
                     <span class="text-xs uppercase tracking-widest text-gray-300">${album.label}</span>
                     <h3 class="font-serif text-xl font-bold">${album.label} Album (${sources.length} Photos)</h3>
                 </div>`;
