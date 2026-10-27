@@ -48,62 +48,156 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Scroll Reveal (fade up when elements enter the screen)
     //    To animate anything new, just add class="reveal" to it.
-    //    Optional stagger: style="--d:.15s"
-    const revealEls = document.querySelectorAll('.reveal');
+    let revealObserver = null;
 
     if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries) => {
+        revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 const el = entry.target;
                 el.classList.add('visible');
                 revealObserver.unobserve(el);
-
-                // Clean up after the animation so it doesn't interfere with filtering
                 setTimeout(() => {
                     el.classList.remove('reveal', 'visible');
                     el.style.removeProperty('--d');
                 }, 1500);
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-        revealEls.forEach(el => revealObserver.observe(el));
-    } else {
-        revealEls.forEach(el => el.classList.add('visible'));
     }
 
-    // 4. Portfolio Category Filter (smooth fade instead of instant jump)
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    function watchReveal(el) {
+        if (revealObserver) revealObserver.observe(el);
+        else el.classList.add('visible');
+    }
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    document.querySelectorAll('.reveal').forEach(watchReveal);
 
-            const filterValue = btn.getAttribute('data-filter');
+    // 4. Portfolio Albums
+    //    To add a photo: upload it to its folder, then add its file name to that folder's list.
+    //    The FIRST file in each list is the cover shown on "All".
+    //    File names must match GitHub exactly (including .JPG vs .jpg).
+    const albums = [
+        {
+            key: 'portraits', label: 'Portraits', folder: 'Portraits',
+            files: ['1.jpg', '15.jpg', '21.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg',
+                    'IMG_3313.jpg', 'IMG_3320.jpg', 'IMG_3326.jpg', 'IMG_4345.jpg',
+                    'IMG_8678.jpg', 'IMG_8684.jpg', 'IMG_8712.jpg']
+        },
+        {
+            key: 'events', label: 'Events', folder: 'Events',
+            files: ['1.jpg', '2.jpg', 'IMG_9132.jpg', 'IMG_9261.jpg']
+        },
+        {
+            key: 'christening', label: 'Christening', folder: 'Christening',
+            files: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg',
+                    'IMG_2354.jpg', 'IMG_2380.jpg', 'IMG_2389.jpg', 'IMG_2393.jpg', 'IMG_2402.jpg',
+                    'i.jpg', 'im.jpg']
+        },
+        {
+            key: 'pageants', label: 'Pageants', folder: 'Pageants',
+            files: ['1.JPG', 'IMG_1170.JPG', 'IMG_1274.JPG', 'IMG_1297.JPG', 'IMG_1322.JPG']
+        },
+        {
+            key: 'concert', label: 'Concert', folder: 'Concert',
+            files: ['1.JPG', 'IMG_5505.JPG', 'IMG_5506.JPG', 'IMG_5518.JPG']
+        },
+        {
+            key: 'family', label: 'Family', folder: 'Family Photo',
+            files: ['1.jpg', 'IMG_4210.jpg', 'IMG_4217.jpg', 'IMG_4224.jpg',
+                    'IMG_4244.jpg', 'IMG_4275.jpg', 'IMG_5422.jpg']
+        },
+        {
+            key: 'street', label: 'Street', folder: 'Street',
+            files: ['1.jpg', 'IMG_2071.jpg']
+        },
+        {
+            key: 'travel', label: 'Travel', folder: 'Travel',
+            files: ['1.JPG', 'IMG_0681.jpg', 'IMG_0685.jpg', 'IMG_5642grain.jpg']
+        }
+    ];
 
-            galleryItems.forEach(item => {
-                const matches = filterValue === 'all' || item.classList.contains(filterValue);
+    const galleryGrid = document.getElementById('galleryGrid');
+    const filterContainer = document.getElementById('filterContainer');
 
-                if (matches) {
-                    if (item.style.display === 'none') {
-                        item.style.display = '';
-                        item.classList.add('filter-hide');
-                        void item.offsetWidth; // force reflow so the fade-in plays
-                    }
-                    requestAnimationFrame(() => item.classList.remove('filter-hide'));
-                } else {
-                    item.classList.add('filter-hide');
-                    setTimeout(() => {
-                        if (item.classList.contains('filter-hide')) {
-                            item.style.display = 'none';
-                        }
-                    }, 350);
-                }
-            });
+    const COVER_LAYOUT = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8';
+    const PHOTO_LAYOUT = 'columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6';
+
+    const srcOf = (album, file) => `selected works/${album.folder}/${file}`;
+
+    // "All" view: one grayscale cover per album
+    function buildCovers() {
+        galleryGrid.className = COVER_LAYOUT;
+        galleryGrid.innerHTML = '';
+
+        albums.forEach((album, i) => {
+            const sources = album.files.map(f => srcOf(album, f));
+            const item = document.createElement('div');
+            item.className = 'gallery-item reveal relative group overflow-hidden cursor-pointer rounded-sm';
+            item.style.setProperty('--d', `${(i % 4) * 0.1}s`);
+            item.innerHTML = `
+                <img src="${sources[0]}" alt="${album.label} album" loading="lazy"
+                     class="w-full h-[350px] sm:h-[450px] object-cover grayscale transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+                    <span class="text-xs uppercase tracking-widest text-gray-300">${album.label}</span>
+                    <h3 class="font-serif text-xl font-bold">${album.label} Album (${sources.length} Photos)</h3>
+                </div>`;
+            item.addEventListener('click', () => window.openAlbum(sources, 0));
+            galleryGrid.appendChild(item);
+            watchReveal(item);
         });
-    });
+    }
+
+    // Category view: every photo in that album, still grayscale
+    function buildPhotos(album) {
+        galleryGrid.className = PHOTO_LAYOUT;
+        galleryGrid.innerHTML = '';
+        const sources = album.files.map(f => srcOf(album, f));
+
+        sources.forEach((src, i) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item reveal relative group overflow-hidden cursor-pointer rounded-sm break-inside-avoid mb-4 sm:mb-6';
+            item.style.setProperty('--d', `${(i % 3) * 0.1}s`);
+            item.innerHTML = `<img src="${src}" alt="${album.label} photo ${i + 1}" loading="lazy"
+                     class="w-full h-auto block grayscale transition-transform duration-500 group-hover:scale-105">`;
+            item.addEventListener('click', () => window.openAlbum(sources, i));
+            galleryGrid.appendChild(item);
+            watchReveal(item);
+        });
+    }
+
+    let currentFilter = 'all';
+
+    function showCategory(key, btn) {
+        if (key === currentFilter) return;
+        currentFilter = key;
+
+        filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Fade out, swap content, fade back in
+        galleryGrid.style.transition = 'opacity 0.3s ease';
+        galleryGrid.style.opacity = '0';
+        setTimeout(() => {
+            if (key === 'all') buildCovers();
+            else buildPhotos(albums.find(a => a.key === key));
+            galleryGrid.style.opacity = '1';
+        }, 300);
+    }
+
+    if (galleryGrid && filterContainer) {
+        // Build the filter buttons: All + one per album
+        filterContainer.innerHTML = '';
+        [{ key: 'all', label: 'All' }, ...albums].forEach(f => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn' + (f.key === 'all' ? ' active' : '');
+            btn.textContent = f.label;
+            btn.dataset.filter = f.key;
+            btn.addEventListener('click', () => showCategory(f.key, btn));
+            filterContainer.appendChild(btn);
+        });
+
+        buildCovers();
+    }
 
     // 5. Lightbox Album Viewer (smooth open, slide/fade between photos)
     const lightbox = document.getElementById('lightbox');
@@ -121,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxCounter.textContent = `${currentIndex + 1} / ${currentAlbumImages.length}`;
     }
 
-    // Load neighbouring photos in the background so "next" feels instant
     function preloadNeighbours() {
         const total = currentAlbumImages.length;
         [(currentIndex + 1) % total, (currentIndex - 1 + total) % total].forEach(i => {
@@ -130,16 +223,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Called by the onclick on each gallery card (titles argument is no longer used)
-    window.openAlbum = function (images) {
+    window.openAlbum = function (images, startIndex) {
         currentAlbumImages = images;
-        currentIndex = 0;
+        currentIndex = Number.isInteger(startIndex) ? startIndex : 0;
         isBusy = false;
 
         lightboxImg.style.transition = 'none';
         lightboxImg.style.opacity = '0';
         lightboxImg.style.transform = 'scale(0.96)';
-        lightboxImg.src = currentAlbumImages[0];
+        lightboxImg.src = currentAlbumImages[currentIndex];
         updateCounter();
 
         lightbox.classList.add('open');
@@ -153,12 +245,10 @@ document.addEventListener('DOMContentLoaded', () => {
         preloadNeighbours();
     };
 
-    // dir: 1 = next (slides left), -1 = previous (slides right)
     function changeImage(newIndex, dir) {
         if (isBusy || currentAlbumImages.length < 2) return;
         isBusy = true;
 
-        // Fade + slide the current photo out
         lightboxImg.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
         lightboxImg.style.opacity = '0';
         lightboxImg.style.transform = `translateX(${-40 * dir}px)`;
@@ -170,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const show = () => {
                 lightboxImg.src = src;
-                // Start the new photo off to the side, then glide it in
                 lightboxImg.style.transition = 'none';
                 lightboxImg.style.transform = `translateX(${40 * dir}px)`;
                 void lightboxImg.offsetWidth;
@@ -205,12 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
     lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-    // Click the dark background to close
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) closeLb();
     });
 
-    // Keyboard: Esc, left arrow, right arrow
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('open')) return;
         if (e.key === 'Escape') closeLb();
@@ -218,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight') showNext();
     });
 
-    // Swipe left/right on phones
     let touchStartX = 0;
     lightbox.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].clientX;
