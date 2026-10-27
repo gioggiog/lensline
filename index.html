@@ -211,85 +211,96 @@
      ============================================================ -->
 
 <!-- Services Section -->
-<section id="services" class="py-16 sm:py-24 px-5 sm:px-8 max-w-[1800px] mx-auto">
+<section id="services" class="w-full bg-[#0c0c0c] border-y border-white/5">
+    <div class="py-16 sm:py-24 px-5 sm:px-8 max-w-[1800px] mx-auto">
 
-    <!-- Section Header -->
-    <div class="reveal flex flex-col lg:flex-row lg:items-end justify-between mb-6 border-b border-white/10 pb-6 sm:pb-8 gap-6">
-        <div>
-            <div class="flex items-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-1">
-                <span>What I Do</span>
-                <span>/</span>
+        <!-- Section Header -->
+        <div class="reveal mb-12 sm:mb-16">
+            <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-gray-500 mb-3">What I Do</p>
+            <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-5">Services Offered</h2>
+            <p class="max-w-xl text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
+                From milestone celebrations to quiet moments on the street, I photograph the stories worth keeping.
+            </p>
+        </div>
+
+        <!-- Service Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+
+            <!-- Event Coverage -->
+            <div class="reveal group bg-[#070707] border border-white/10 p-7 sm:p-8 transition-all duration-500 hover:border-white/30 hover:-translate-y-1" style="--d:0s">
+                <svg class="w-6 h-6 text-gray-300 mb-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/>
+                </svg>
+                <h3 class="font-serif text-2xl sm:text-[26px] font-semibold mb-4">Event Coverage</h3>
+                <p class="text-xs sm:text-[13px] text-gray-400 font-light leading-relaxed mb-8">
+                    Candid, documentary-style coverage of your celebrations, from the big moments to the small details in between.
+                </p>
+                <ul class="font-mono text-[11px] text-gray-500 space-y-3">
+                    <li>• Birthdays</li>
+                    <li>• Christenings</li>
+                    <li>• Civil Weddings</li>
+                </ul>
             </div>
-            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Services Offered</h2>
+
+            <!-- Portraits -->
+            <div class="reveal group bg-[#070707] border border-white/10 p-7 sm:p-8 transition-all duration-500 hover:border-white/30 hover:-translate-y-1" style="--d:.12s">
+                <svg class="w-6 h-6 text-gray-300 mb-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>
+                </svg>
+                <h3 class="font-serif text-2xl sm:text-[26px] font-semibold mb-4">Portraits</h3>
+                <p class="text-xs sm:text-[13px] text-gray-400 font-light leading-relaxed mb-8">
+                    Natural-light and on-location sessions that bring out your personality and feel like you.
+                </p>
+                <ul class="font-mono text-[11px] text-gray-500 space-y-3">
+                    <li>• Outdoor Sessions</li>
+                    <li>• Natural Light</li>
+                    <li>• Personal Portraits</li>
+                </ul>
+            </div>
+
+            <!-- Street Photography -->
+            <div class="reveal group bg-[#070707] border border-white/10 p-7 sm:p-8 transition-all duration-500 hover:border-white/30 hover:-translate-y-1" style="--d:.24s">
+                <svg class="w-6 h-6 text-gray-300 mb-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>
+                </svg>
+                <h3 class="font-serif text-2xl sm:text-[26px] font-semibold mb-4">Street Photography</h3>
+                <p class="text-xs sm:text-[13px] text-gray-400 font-light leading-relaxed mb-8">
+                    Where it all started. Unscripted frames of everyday life, people, and the city as it moves.
+                </p>
+                <ul class="font-mono text-[11px] text-gray-500 space-y-3">
+                    <li>• Candid Moments</li>
+                    <li>• Urban Life</li>
+                    <li>• Documentary Series</li>
+                </ul>
+            </div>
+
+            <!-- Photowalks -->
+            <div class="reveal group bg-[#070707] border border-white/10 p-7 sm:p-8 transition-all duration-500 hover:border-white/30 hover:-translate-y-1" style="--d:.36s">
+                <svg class="w-6 h-6 text-gray-300 mb-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+                <h3 class="font-serif text-2xl sm:text-[26px] font-semibold mb-4">Photowalks</h3>
+                <p class="text-xs sm:text-[13px] text-gray-400 font-light leading-relaxed mb-8">
+                    Open walks for anyone who loves to shoot. Explore, learn, and share the craft together.
+                </p>
+                <ul class="font-mono text-[11px] text-gray-500 space-y-3">
+                    <li>• Group Walks</li>
+                    <li>• Beginner Friendly</li>
+                    <li>• Local Spots</li>
+                </ul>
+            </div>
+
         </div>
-        <p class="max-w-md text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-            From milestone celebrations to quiet moments on the street, I photograph the stories worth keeping.
-        </p>
+
+        <!-- Call to Action -->
+        <div class="reveal mt-12 sm:mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 border-t border-white/10 pt-8">
+            <p class="font-serif text-xl sm:text-2xl">Have an event or idea in mind?</p>
+            <a href="#contact" class="px-7 py-3.5 bg-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase hover:bg-gray-200 transition-all text-center">
+                Book a Session
+            </a>
+        </div>
+
     </div>
-
-    <!-- Service List -->
-    <div class="divide-y divide-white/10">
-
-        <!-- 01 Birthdays -->
-        <div class="reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-8 sm:py-10 px-2 items-start transition-colors duration-300 hover:bg-white/[0.03]" style="--d:0s">
-            <span class="md:col-span-1 text-xs tracking-[0.25em] text-gray-500">01</span>
-            <h3 class="md:col-span-4 font-serif text-2xl sm:text-3xl font-semibold">Birthday Coverage</h3>
-            <p class="md:col-span-5 text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                Candid laughter, cake moments, and the little details of the celebration, captured as they happen.
-            </p>
-            <span class="md:col-span-2 md:text-right text-[10px] uppercase tracking-[0.25em] text-gray-500">Events</span>
-        </div>
-
-        <!-- 02 Christening -->
-        <div class="reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-8 sm:py-10 px-2 items-start transition-colors duration-300 hover:bg-white/[0.03]" style="--d:.1s">
-            <span class="md:col-span-1 text-xs tracking-[0.25em] text-gray-500">02</span>
-            <h3 class="md:col-span-4 font-serif text-2xl sm:text-3xl font-semibold">Christening</h3>
-            <p class="md:col-span-5 text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                From the ceremony to the family portraits, gentle and timeless photos of your little one's special day.
-            </p>
-            <span class="md:col-span-2 md:text-right text-[10px] uppercase tracking-[0.25em] text-gray-500">Family</span>
-        </div>
-
-        <!-- 03 Civil Wedding -->
-        <div class="reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-8 sm:py-10 px-2 items-start transition-colors duration-300 hover:bg-white/[0.03]" style="--d:.2s">
-            <span class="md:col-span-1 text-xs tracking-[0.25em] text-gray-500">03</span>
-            <h3 class="md:col-span-4 font-serif text-2xl sm:text-3xl font-semibold">Civil Wedding</h3>
-            <p class="md:col-span-5 text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                Intimate, honest coverage of your vows, your people, and the moments in between.
-            </p>
-            <span class="md:col-span-2 md:text-right text-[10px] uppercase tracking-[0.25em] text-gray-500">Weddings</span>
-        </div>
-
-        <!-- 04 Portraits -->
-        <div class="reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-8 sm:py-10 px-2 items-start transition-colors duration-300 hover:bg-white/[0.03]" style="--d:.3s">
-            <span class="md:col-span-1 text-xs tracking-[0.25em] text-gray-500">04</span>
-            <h3 class="md:col-span-4 font-serif text-2xl sm:text-3xl font-semibold">Portraits</h3>
-            <p class="md:col-span-5 text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                Studio and natural-light sessions that bring out your personality, styled to feel like you.
-            </p>
-            <span class="md:col-span-2 md:text-right text-[10px] uppercase tracking-[0.25em] text-gray-500">Studio &amp; Outdoor</span>
-        </div>
-
-        <!-- 05 Street Photography -->
-        <div class="reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-8 sm:py-10 px-2 items-start transition-colors duration-300 hover:bg-white/[0.03]" style="--d:.4s">
-            <span class="md:col-span-1 text-xs tracking-[0.25em] text-gray-500">05</span>
-            <h3 class="md:col-span-4 font-serif text-2xl sm:text-3xl font-semibold">Street Photography &amp; Photowalks</h3>
-            <p class="md:col-span-5 text-xs sm:text-sm text-gray-400 font-light leading-relaxed">
-                Where it all started. Unscripted frames of everyday life, and walks open to anyone who loves to shoot.
-            </p>
-            <span class="md:col-span-2 md:text-right text-[10px] uppercase tracking-[0.25em] text-gray-500">Documentary</span>
-        </div>
-
-    </div>
-
-    <!-- Call to Action -->
-    <div class="reveal mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 border-t border-white/10 pt-8">
-        <p class="font-serif text-xl sm:text-2xl">Have an event or idea in mind?</p>
-        <a href="#contact" class="px-7 py-3.5 bg-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase hover:bg-gray-200 transition-all text-center">
-            Book a Session
-        </a>
-    </div>
-
 </section>
 
 <!-- Lightbox Album Viewer -->
