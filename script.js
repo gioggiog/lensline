@@ -78,14 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
     //    File names must match GitHub exactly (including .JPG vs .jpg).
     const albums = [
         {
-            key: 'portraits', label: 'Portraits', folder: 'Portraits',
-            files: ['1.jpg', '15.jpg', '21.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg',
-                    'IMG_3313.jpg', 'IMG_3320.jpg', 'IMG_3326.jpg', 'IMG_4345.jpg',
-                    'IMG_8678.jpg', 'IMG_8684.jpg', 'IMG_8712.jpg']
+            key: 'birthday', label: 'Birthday', folder: 'Birthday',
+            files: ['1.jpg', 'IMG_0528.jpg', 'IMG_0547.jpg', 'IMG_1059.jpg', 'IMG_1063.jpg',
+                    'IMG_1079.jpg', 'IMG_1091.jpg', 'IMG_1095.jpg', 'IMG_8613.jpg',
+                    'IMG_8673.jpg', 'IMG_8675.jpg', 'IMG_8806.jpg', 'IMG_8818.jpg']
         },
         {
             key: 'events', label: 'Events', folder: 'Events',
             files: ['1.jpg', '2.jpg', 'IMG_9132.jpg', 'IMG_9261.jpg']
+        },
+        {
+            key: 'concert', label: 'Concert', folder: 'Concert',
+            files: ['1.JPG', 'IMG_5505.JPG', 'IMG_5506.JPG', 'IMG_5518.JPG']
+        },
+        {
+            key: 'street', label: 'Street', folder: 'Street',
+            files: ['1.jpg', 'IMG_2071.jpg']
         },
         {
             key: 'christening', label: 'Christening', folder: 'Christening',
@@ -98,17 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
             files: ['1.JPG', 'IMG_1170.JPG', 'IMG_1274.JPG', 'IMG_1297.JPG', 'IMG_1322.JPG']
         },
         {
-            key: 'concert', label: 'Concert', folder: 'Concert',
-            files: ['1.JPG', 'IMG_5505.JPG', 'IMG_5506.JPG', 'IMG_5518.JPG']
-        },
-        {
             key: 'family', label: 'Family', folder: 'Family Photo',
             files: ['1.jpg', 'IMG_4210.jpg', 'IMG_4217.jpg', 'IMG_4224.jpg',
                     'IMG_4244.jpg', 'IMG_4275.jpg', 'IMG_5422.jpg']
         },
         {
-            key: 'street', label: 'Street', folder: 'Street',
-            files: ['1.jpg', 'IMG_2071.jpg']
+            key: 'portraits', label: 'Portraits', folder: 'Portraits',
+            files: ['1.jpg', '15.jpg', '21.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg',
+                    'IMG_3313.jpg', 'IMG_3320.jpg', 'IMG_3326.jpg', 'IMG_4345.jpg',
+                    'IMG_8678.jpg', 'IMG_8684.jpg', 'IMG_8712.jpg']
         },
         {
             key: 'travel', label: 'Travel', folder: 'Travel',
