@@ -87,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             key: 'concert', label: 'Concert', folder: 'Concert',
-            files: ['1.JPG', 'IMG_5505.JPG', 'IMG_5506.JPG', 'IMG_5518.JPG']
+            files: ['1.jpg', 'IMG_4390.jpg', 'IMG_4398.jpg', 'IMG_4399.jpg',
+                    'IMG_5505.JPG', 'IMG_5506.JPG', 'IMG_5518.JPG', 'IMG_5519.JPG']
         },
         {
             key: 'family', label: 'Family', folder: 'Family Photo',
