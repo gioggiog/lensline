@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryGrid = document.getElementById('galleryGrid');
     const filterContainer = document.getElementById('filterContainer');
 
-    const COVER_LAYOUT = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8';
+    const COVER_LAYOUT = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8';
     const PHOTO_LAYOUT = 'columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6';
 
     const srcOf = (album, file) => `selected works/${album.folder}/${file}`;
