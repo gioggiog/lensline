@@ -78,10 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //    File names must match GitHub exactly (including .JPG vs .jpg).
     const albums = [
         {
-            key: 'birthday', label: 'Birthday', folder: 'Birthday',
-            files: ['1.jpg', 'IMG_0528.jpg', 'IMG_0547.jpg', 'IMG_1059.jpg', 'IMG_1063.jpg',
-                    'IMG_1079.jpg', 'IMG_1091.jpg', 'IMG_1095.jpg', 'IMG_8613.jpg',
-                    'IMG_8673.jpg', 'IMG_8675.jpg', 'IMG_8806.jpg', 'IMG_8818.jpg']
+            key: 'travel', label: 'Travel', folder: 'Travel',
+            files: ['1.JPG', 'IMG_0681.jpg', 'IMG_0685.jpg', 'IMG_5642grain.jpg']
         },
         {
             key: 'events', label: 'Events', folder: 'Events',
@@ -94,6 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             key: 'street', label: 'Street', folder: 'Street',
             files: ['1.jpg', 'IMG_2071.jpg']
+        },
+        {
+            key: 'birthday', label: 'Birthday', folder: 'Birthday',
+            files: ['1.jpg', 'IMG_0528.jpg', 'IMG_0547.jpg', 'IMG_1059.jpg', 'IMG_1063.jpg',
+                    'IMG_1079.jpg', 'IMG_1091.jpg', 'IMG_1095.jpg', 'IMG_8613.jpg',
+                    'IMG_8673.jpg', 'IMG_8675.jpg', 'IMG_8806.jpg', 'IMG_8818.jpg']
         },
         {
             key: 'christening', label: 'Christening', folder: 'Christening',
@@ -115,10 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             files: ['1.jpg', '15.jpg', '21.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg',
                     'IMG_3313.jpg', 'IMG_3320.jpg', 'IMG_3326.jpg', 'IMG_4345.jpg',
                     'IMG_8678.jpg', 'IMG_8684.jpg', 'IMG_8712.jpg']
-        },
-        {
-            key: 'travel', label: 'Travel', folder: 'Travel',
-            files: ['1.JPG', 'IMG_0681.jpg', 'IMG_0685.jpg', 'IMG_5642grain.jpg']
         }
     ];
 
