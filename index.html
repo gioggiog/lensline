@@ -354,6 +354,121 @@
     </div>
 </section>
 
+    <!-- Contact Section -->
+<section id="contact" class="w-full bg-[#0c0c0c] border-t border-white/5">
+    <div class="py-16 sm:py-24 px-5 sm:px-8 max-w-[1200px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+            <!-- Left: Info -->
+            <div>
+                <p class="reveal text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-gray-500 mb-3">Inquiries</p>
+                <h2 class="reveal font-serif text-4xl sm:text-5xl font-semibold tracking-tight mb-6" style="--d:.1s">Let's Create Together</h2>
+                <p class="reveal text-xs sm:text-sm text-gray-400 font-light leading-relaxed max-w-md mb-10" style="--d:.2s">
+                    Now booking birthdays, christenings, civil weddings, events, concerts, and portrait sessions. Tell me about your date and what you have in mind, and I'll get back to you.
+                </p>
+
+                <div class="reveal space-y-4 font-mono text-[12px] text-white" style="--d:.3s">
+                    <a href="mailto:book.lensline@gmail.com" class="flex items-center gap-4 hover:text-gray-300 transition-colors">
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                        book.lensline@gmail.com
+                    </a>
+                    <p class="flex items-center gap-4">
+                        <svg class="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Cebu, Philippines
+                    </p>
+                </div>
+
+                <!-- Social links: replace the # with your real links, or delete this block -->
+                <div class="reveal flex items-center gap-3 mt-8" style="--d:.4s">
+                    <a href="#" target="_blank" rel="noopener" aria-label="Facebook"
+                       class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-gray-300 hover:bg-white hover:text-black transition-all text-sm">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Instagram"
+                       class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-gray-300 hover:bg-white hover:text-black transition-all text-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <form id="contactForm" class="reveal space-y-6" style="--d:.2s">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="cName" class="block text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-2">Your Name *</label>
+                        <input id="cName" type="text" required
+                               class="w-full bg-[#070707] border border-white/10 focus:border-white/40 outline-none px-4 py-3 text-sm text-white transition-colors">
+                    </div>
+                    <div>
+                        <label for="cEmail" class="block text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-2">Email Address *</label>
+                        <input id="cEmail" type="email" required
+                               class="w-full bg-[#070707] border border-white/10 focus:border-white/40 outline-none px-4 py-3 text-sm text-white transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="cService" class="block text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-2">Project / Service Type</label>
+                    <select id="cService"
+                            class="w-full bg-[#070707] border border-white/10 focus:border-white/40 outline-none px-4 py-3 text-sm text-white transition-colors">
+                        <option class="bg-black">Birthday Coverage</option>
+                        <option class="bg-black">Christening</option>
+                        <option class="bg-black">Civil Wedding</option>
+                        <option class="bg-black">Event / Concert</option>
+                        <option class="bg-black">Portrait Session</option>
+                        <option class="bg-black">Street Photography / Photowalk</option>
+                        <option class="bg-black">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cMessage" class="block text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-2">Message *</label>
+                    <textarea id="cMessage" rows="5" required placeholder="Tell me about your date, venue, and what you have in mind..."
+                              class="w-full bg-[#070707] border border-white/10 focus:border-white/40 outline-none px-4 py-3 text-sm text-white placeholder-gray-600 transition-colors resize-y"></textarea>
+                </div>
+
+                <button type="submit"
+                        class="w-full px-7 py-4 bg-white text-black font-semibold text-[11px] tracking-[0.25em] uppercase hover:bg-gray-200 transition-all">
+                    Send Message
+                </button>
+                <p class="text-[11px] text-gray-500 font-light">This opens your email app with the message ready to send.</p>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+        <div class="max-w-[1200px] mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase tracking-[0.2em] text-gray-500">
+            <p>&copy; 2026 LensLine by Gio. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="#gallery" class="hover:text-white transition-colors">Work</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- Contact form: opens the visitor's email app with the message filled in -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('cName').value.trim();
+        const email = document.getElementById('cEmail').value.trim();
+        const service = document.getElementById('cService').value;
+        const message = document.getElementById('cMessage').value.trim();
+
+        const subject = `${service} inquiry from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`;
+
+        window.location.href = `mailto:book.lensline@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+</script>
+
 <!-- Lightbox Album Viewer -->
 <div id="lightbox" class="lightbox fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4">
     <button id="closeLightbox" class="absolute top-5 right-6 text-white text-3xl hover:text-gray-300" aria-label="Close">
